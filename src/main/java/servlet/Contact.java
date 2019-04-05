@@ -39,8 +39,10 @@ public class Contact extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String CHAMP_EMAIL="email"; 
+		String CHAMP_MSG="msg"; 
 	    String email = request.getParameter(CHAMP_EMAIL);
-		System.out.println("jo "+email);
+	    String msg = request.getParameter(CHAMP_MSG);
+		System.out.println("jo "+email+" "+msg);
 
 		doGet(request, response);
 	}

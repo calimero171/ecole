@@ -21,7 +21,7 @@
 			</div>
 			<div class="form-group">
 				<label for="message">Message</label> <input
-					type="text" class="form-control" id="exampleInputPassword1"
+					type="text" class="form-control" id="msg" name="msg"
 					placeholder="Password">
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
