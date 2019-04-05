@@ -72,14 +72,14 @@ public class AccessBdd {
 		return userList;
 	}
 
-	public void inscrireUser(String ide,String nom, String prenom) {
+	public void inscrireUser(String nom, String prenom) {
 		try {
 			this.connect = DriverManager.getConnection(this.url, this.user, this.mdp);
 
-			preparedStatement = connect.prepareStatement("insert into  ecole.user values (default, ?, ?, ?, ? , ?, ?)");
-			preparedStatement.setString(1, ide);
-			preparedStatement.setString(2, nom);
-			preparedStatement.setString(3, prenom);
+			preparedStatement = connect.prepareStatement("insert into  ecole.user values ( default, ?, ?)");
+		
+			preparedStatement.setString(1, nom);
+			preparedStatement.setString(2, prenom);
 			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {

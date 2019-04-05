@@ -7,11 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bd.AccessBdd;
+
 /**
  * Servlet implementation class Contact
  */
 public class Contact extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private AccessBdd bd=new AccessBdd(); 
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -42,9 +45,14 @@ public class Contact extends HttpServlet {
 		String CHAMP_MSG="msg"; 
 	    String email = request.getParameter(CHAMP_EMAIL);
 	    String msg = request.getParameter(CHAMP_MSG);
+	    bd.inscrireUser( email, msg);
+	    
 		System.out.println("jo "+email+" "+msg);
 
-		doGet(request, response);
+		//doGet(request, response);
+		
+		
+		this.getServletContext().getRequestDispatcher("/WEB-INF/OK.jsp").forward(request, response);
 	}
 
 }
