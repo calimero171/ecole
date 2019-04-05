@@ -83,9 +83,34 @@ public class AccessBdd {
 			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } finally {
+            if (this.connect != null) {
+                try {
+                    this.connect.close();
+                } catch (SQLException e){
+                    System.out.println(e);
+                }
+
+            }
+            if (this.statement != null) {
+                try {
+                    this.statement.close();
+                } catch (SQLException e){
+                    System.out.println(e);
+                }
+
+            }
+            if (this.resultSet != null) {
+                try {
+                    this.resultSet.close();
+                } catch (SQLException e){
+                    System.out.println(e);
+                }
+
+            }
+        }
 	}
 
 //         preparedStatement = connect
