@@ -55,12 +55,20 @@
     <p>test contenu</p>
     <p>
     <%
+    
+    
     String message =(String) request.getAttribute("myComment");
     out.println(message);    
     %>
     </p>
       
-    <p>${buoy.mail}</p>
+    <p>${buoy}</p>
+    
+    <p>${user}</p>
+    
+    <c:forEach items="${user}" var="user">
+        <li><c:out value="test ${user.prenom} ${user.nom} ${user.id}"></c:out></li>
+    </c:forEach>
     
     </div>
     

@@ -26,7 +26,9 @@ public class Contact extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-			
+		
+
+	
 		this.getServletContext().getRequestDispatcher("/WEB-INF/Contact.jsp").forward(request, response);
 	}
 
@@ -35,9 +37,7 @@ public class Contact extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String email = request.getParameter( "email" );
-		System.out.println(email);
-		
+
 		doGet(request, response);
 	}
 
