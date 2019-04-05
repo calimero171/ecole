@@ -11,10 +11,10 @@
 </head>
 <body>
 	<div class="container">
-		<form action="Contact" method="get">
+		<form method="post" action="Contact" >
 			<div class="form-group">
 				<label for="email">Email address</label> <input
-					type="email" class="form-control" id="exampleInputEmail1"
+					type="email" class="form-control" id="email" name="email"
 					aria-describedby="emailHelp" placeholder="Enter email"> <small
 					id="emailHelp" class="form-text text-muted">We'll never
 					share your email with anyone else.</small>
